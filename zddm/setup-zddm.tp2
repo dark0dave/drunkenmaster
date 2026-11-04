@@ -1,0 +1,35 @@
+BACKUP ~weidu_external/zddm/backup~
+SUPPORT "https://github.com/dark0dave/drunkenmaster/issues"
+VERSION ~v0.1.0~
+README ~zddm/readme.md~
+ASK_EVERY_COMPONENT
+// MODDER
+// setup_tra warn
+// area_variables warn
+// missing_extern warn
+// missing_resref warn
+// ict2_actions warn
+// missing_eval warn
+// overwriting_file warn
+// fun_args warn
+
+LANGUAGE ~English~ ~en_US~ ~zddm/lang/english/setup.tra~
+
+BEGIN ~Drunken Master Kit~
+DESIGNATED 100
+LABEL ~Core~
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) ~This component is for BGEE, BG2:EE or EET.~
+INCLUDE ~zddm/lib/a7#add_kit_ex.tpa~
+
+LAUNCH_ACTION_FUNCTION ADD_KIT_EX
+    INT_VAR
+        kit_class = 20
+        mixed     = RESOLVE_STR_REF(@1)
+        lower     = RESOLVE_STR_REF(@2)
+        help      = RESOLVE_STR_REF(@3)
+    STR_VAR
+        kit_name  = ~ZDDMONK~
+        clab_path = ~zddm/clab/CLABDMON.2DA~
+    RET
+        kit_id
+END
