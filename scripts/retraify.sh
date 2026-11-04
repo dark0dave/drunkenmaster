@@ -11,7 +11,7 @@ retraify() {
 
 main() {
   for file in $( find . -type f -iname "*.tp2" ); do
-    retraify "${file}" k0_iskp/lang/english/weidu.tra
+    retraify "${file}" zddm/lang/english/setup.tra
   done
 }
 
