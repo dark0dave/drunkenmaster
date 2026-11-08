@@ -1,0 +1,107 @@
+IF
+  CheckStatGT(Player1,50,31)
+  Kit(Player1,%kit_id%)
+  Global("ZD_DRUNK","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ZD_DRUNK","GLOBAL",1)
+END
+
+IF
+  CheckStatLT(Player1,50,31)
+  Kit(Player1,%kit_id%)
+  Global("ZD_DRUNK","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ZD_DRUNK","GLOBAL",0)
+END
+
+IF
+  CheckStatGT(Player2,50,31)
+  Kit(Player2,%kit_id%)
+  Global("ZD_DRUNK","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ZD_DRUNK","GLOBAL",1)
+END
+
+IF
+  CheckStatLT(Player2,50,31)
+  Kit(Player2,%kit_id%)
+  Global("ZD_DRUNK","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ZD_DRUNK","GLOBAL",0)
+END
+
+IF
+  CheckStatGT(Player3,50,31)
+  Kit(Player3,%kit_id%)
+  Global("ZD_DRUNK","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ZD_DRUNK","GLOBAL",1)
+END
+
+IF
+  CheckStatLT(Player3,50,31)
+  Kit(Player3,%kit_id%)
+  Global("ZD_DRUNK","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ZD_DRUNK","GLOBAL",0)
+END
+
+IF
+  CheckStatGT(Player4,50,31)
+  Kit(Player4,%kit_id%)
+  Global("ZD_DRUNK","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ZD_DRUNK","GLOBAL",1)
+END
+
+IF
+  CheckStatLT(Player4,50,31)
+  Kit(Player4,%kit_id%)
+  Global("ZD_DRUNK","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ZD_DRUNK","GLOBAL",0)
+END
+
+IF
+  CheckStatGT(Player5,50,31)
+  Kit(Player5,%kit_id%)
+  Global("ZD_DRUNK","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ZD_DRUNK","GLOBAL",1)
+END
+
+IF
+  CheckStatLT(Player5,50,31)
+  Kit(Player5,%kit_id%)
+  Global("ZD_DRUNK","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ZD_DRUNK","GLOBAL",0)
+END
+
+IF
+  CheckStatGT(Player6,50,31)
+  Kit(Player6,%kit_id%)
+  Global("ZD_DRUNK","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ZD_DRUNK","GLOBAL",1)
+END
+
+IF
+  CheckStatLT(Player6,50,31)
+  Kit(Player6,%kit_id%)
+  Global("ZD_DRUNK","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ZD_DRUNK","GLOBAL",0)
+END

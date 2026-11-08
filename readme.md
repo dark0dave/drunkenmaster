@@ -15,12 +15,15 @@ Link: https://bg3.wiki/wiki/Way_of_the_Drunken_Master
 
 Inspiration also came from: https://github.com/shohysie/Minor_Kit_Improvement
 
+- Gain none of the monk abilities.
 - Intoxication (1st): Drinking Alcohol increases saving throws and dexterity whilst reducing intelligence. In addition to the normal effect alcohol has.
 - Sober (1st): Whilst sober suffer thaco/charisma pentality, and slowed effect applied.
 - Drunken Technique (3rd): When Intoxicationed, gain Free Action.
-- Tipsy Sway (6th): Once per day, gains -1 bonus to Armor Class per level, up to a maximum of -10 bonus.
-- Drunkard’s Luck (11th): Once per day, +1 saving throws per 3 levels, up to maximum of +10 bonus.
-- Intoxicated Frenzy (13th): Once per day, apr +2 for 6 rounds.
+- Tipsy Sway (5th): When Intoxicationed, Once per day, gains -1 bonus to Armor Class per level, up to a maximum of -10 bonus.
+- Imperious Stomach (7th): When Intoxicationed, Immunity to poison and poison effects.
+- Fire Breath (9th): When Intoxicationed, vomit a fireball (breathe fireball) once a day, clears intoxicationed status.
+- Drunkard’s Luck (11th): When Intoxicationed, +1 saving throws +1 luck
+- Intoxicated Frenzy (13th): When Intoxicationed, Once per day, apr +2 for 6 rounds.
 - Drunkard's Luck (15th): Improves to twice a day.
 - Intoxicated Frenzy (17th): Improves to twice a day.
 

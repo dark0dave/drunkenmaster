@@ -16,3 +16,5 @@ LAUNCH_ACTION_FUNCTION ADD_KIT_EX
     RET
         kit_id
 END
+
+EXTEND_TOP ~BALDUR.BCS~ ~%MOD_FOLDER%/baf/zddrunk.baf~
