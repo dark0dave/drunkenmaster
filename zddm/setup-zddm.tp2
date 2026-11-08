@@ -20,8 +20,7 @@ DESIGNATED 100
 LABEL ~Core~
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @6 /* This component is for BGEE, BG2:EE or EET. */
 
-
-BEGIN ~Add more Booze to the game stores~
+BEGIN @7 /* Add more Booze to the game stores */
 DESIGNATED 101
 LABEL ~Extra Booze~
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @6 /* This component is for BGEE, BG2:EE or EET. */

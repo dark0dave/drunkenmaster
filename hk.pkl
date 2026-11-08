@@ -33,6 +33,12 @@ local local_hooks = new Mapping<String, Step> {
     check = "test $(find zddm -type f -name '*[[:upper:]]*' | wc -l) -eq 0"
     exclusive = true
   }
+  ["re-traify"] {
+    glob = List("*.tra", "*.tp2", "*.tpa")
+    stdin = "{{ files_list | join(sep='\n') }}"
+    check = "xargs -I {} scripts/retraify.sh {}"
+    exclusive = true
+  }
   ["check-ie"] {
     glob = List("*.bam","*.baf","*.cre","*.d","*.itm","*.spl","*.sto","*.wav","*.vvc")
     exclude = List("docs/*/*.d")
