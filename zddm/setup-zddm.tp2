@@ -21,12 +21,14 @@ LABEL ~Core~
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @6 /* This component is for BGEE, BG2:EE or EET. */
 INCLUDE ~zddm/lib/a7#add_kit_ex.tpa~
 
+COPY ~%MOD_FOLDER%/spells~ ~override~
+
 LAUNCH_ACTION_FUNCTION ADD_KIT_EX
     INT_VAR
         kit_class = 20
         mixed     = RESOLVE_STR_REF(@1 /* Drunken Master */)
         lower     = RESOLVE_STR_REF(@2 /* drunken master */)
-        help      = RESOLVE_STR_REF(@3 /* DRUNKEN MASTER: A monk who turns drink and unpredictable movement into a combat style. */)
+        help      = RESOLVE_STR_REF(@3 /* DRUNKEN MASTER: Way of the Drunken Master. */)
     STR_VAR
         kit_name  = ~ZDDMONK~
         clab_path = ~zddm/clab/CLABDMON.2DA~
