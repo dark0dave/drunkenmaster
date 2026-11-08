@@ -1,0 +1,18 @@
+INCLUDE ~%MOD_FOLDER%/lib/a7#add_kit_ex.tpa~
+
+COPY ~%MOD_FOLDER%/spells~ ~override~
+
+LAUNCH_ACTION_FUNCTION ADD_KIT_EX
+    INT_VAR
+        kit_class = 20
+        mixed     = RESOLVE_STR_REF(@1 /* Drunken Master */)
+        lower     = RESOLVE_STR_REF(@2 /* drunken master */)
+        help      = RESOLVE_STR_REF(@3 /* DRUNKEN MASTER: Way of the Drunken Master. */)
+        briefdesc = "I drink there for I am"
+    STR_VAR
+        kit_name  = ~ZDDMONK~
+        clab_path = ~zddm/clab/CLABDMON.2DA~
+        kittable = ~K_MN_H~
+    RET
+        kit_id
+END
