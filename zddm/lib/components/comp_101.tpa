@@ -1,64 +1,69 @@
 // Wine
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~zdwine.itm~ BEGIN
-  COPY ~%MOD_FOLDER%/itm/zdwine.itm~ ~override~
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~zdwine1.itm~ BEGIN
+  COPY ~%MOD_FOLDER%/itm/zdwine.itm~ ~override/zdwine1.itm~
     SAY NAME1 ~Wine~
-    SAY NAME2 ~Wine~
-    SAY UNIDENTIFIED_DESC ~Wine. Drink me
+    SAY NAME2 ~Winter Wine~
+    SAY UNIDENTIFIED_DESC ~Looks to be some kind of wine.
 
 STATISTICS:
 
 Weight: 1~
-    SAY DESC ~Very much as the name implies, this potion will increase the Charisma of the imbiber by 4 points, up to a maximum of 25. The effect will last the full duration, which is 3 hours, or until dispelled.
+    SAY DESC ~The label on this wine bottle reads "Winter Wine" and claims to be a fruity blend of spices and dew-flower fragrances. The vineyards of Marsember are well-known for their firm grapes, which draw their flavor from the fragrant salt air of the Sea of Fallen Stars.
 
 STATISTICS:
 
-Charisma: +4 (non-cumulative)
-Duration: 3 hours
-
 Weight: 1~
+    WRITE_ASCII 0x3a zdiwine1 // Inventory Icon
+    WRITE_ASCII 0x58 zddwine1 // Description Icon
+    WRITE_LONG  0x34 15       // Price
 END
 
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~zdwine.bam~ BEGIN
-  COPY ~%MOD_FOLDER%/bam/zdwine.bam~ ~override~
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~zdiwine1.bam~ BEGIN
+  COPY ~%MOD_FOLDER%/bam/zdiwine1.bam~ ~override~
 END
 
-// Borrowed from https://github.com/szaumoor/ZS_Consumables/blob/main/ZS_Consumables/libs/scripts/potions/fragments/zs_incl_potions_stores.tph
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~zddwine1.bam~ BEGIN
+  COPY ~%MOD_FOLDER%/bam/zddwine1.bam~ ~override~
+END
+
 ACTION_IF (GAME_IS ~tob bgt bg2ee eet~) BEGIN
-
-  ACTION_IF FILE_EXISTS_IN_GAME ~ppstor01.sto~ BEGIN  // Storekeep Brynnlaw
-    COPY_EXISTING ~ppstor01.sto~ ~override~
+  // Rassmusen Mead  7
+  // Dark Island Stout  3
+  // Dragon's Beer  1
+  // Elminster's Beer  1
+  // Winter Wine  15
+  // Westgate Wine  8
+  // Evermead  30
+  ACTION_IF FILE_EXISTS_IN_GAME ~ppstor01.sto~ BEGIN  // Innkeeper (Vulgar Monkey)
+    COPY_EXISTING ~ppinn01.sto~ ~override~
       LPF ADD_STORE_ITEM_EX
         INT_VAR
           stack = 3
         STR_VAR
-          position = ~LAST~
-          item_name = ~potn60~
+          item_name = ~zdwine1~ // Winter Wine
       END
     BUT_ONLY
   END
-
   ACTION_IF FILE_EXISTS_IN_GAME ~trmer02.sto~ BEGIN  // Merchant Trademeet
     COPY_EXISTING ~trmer02.sto~ ~override~
       LPF ADD_STORE_ITEM_EX
         INT_VAR
           stack = 3
         STR_VAR
-          item_name = ~potn60~
+          item_name = ~zdwine~
       END
     BUT_ONLY
   END
-
   ACTION_IF FILE_EXISTS_IN_GAME ~murcrag.sto~ BEGIN  // Mrs Cragmoon
     COPY_EXISTING ~murcrag.sto~ ~override~
       LPF ADD_STORE_ITEM_EX
         INT_VAR
           stack = 3
         STR_VAR
-          item_name = ~potn60~
+          item_name = ~zdwine~
       END
     BUT_ONLY
   END
-
   ACTION_IF FILE_EXISTS_IN_GAME ~bernard.sto~ BEGIN  // Copper Coronet Bernard
     COPY_EXISTING
       ~bernard.sto~ ~override~
@@ -73,11 +78,10 @@ ACTION_IF (GAME_IS ~tob bgt bg2ee eet~) BEGIN
         INT_VAR
           stack = 1
         STR_VAR
-          item_name = ~potn60~
+          item_name = ~zdwine~
       END
     BUT_ONLY
   END
-
   ACTION_IF FILE_EXISTS_IN_GAME ~trgeni01.sto~ BEGIN  // Trademeet Genie
     COPY_EXISTING
       ~trgeni01.sto~ ~override~
@@ -86,55 +90,50 @@ ACTION_IF (GAME_IS ~tob bgt bg2ee eet~) BEGIN
         INT_VAR
           stack = 10
         STR_VAR
-          item_name = ~potn60~
+          item_name = ~zdwine~
       END
     BUT_ONLY
   END
-
   ACTION_IF FILE_EXISTS_IN_GAME ~ribald.sto~ BEGIN  // Ribald's Shop
     COPY_EXISTING ~ribald.sto~ ~override~
       LPF ADD_STORE_ITEM_EX
         INT_VAR
           stack = 5
         STR_VAR
-          item_name = ~potn60~
+          item_name = ~zdwine~
       END
     BUT_ONLY
   END
-
   ACTION_IF FILE_EXISTS_IN_GAME ~udduer02.sto~ BEGIN  // Duergar Merchant (When Encountered As A Drow)
     COPY_EXISTING ~udduer02.sto~ ~override~
       LPF ADD_STORE_ITEM_EX
         INT_VAR
           stack = 5
         STR_VAR
-          item_name = ~potn60~
+          item_name = ~zdwine~
       END
     BUT_ONLY
   END
-
   ACTION_IF FILE_EXISTS_IN_GAME ~bmthief.sto~ BEGIN  // Black Market Thief
     COPY_EXISTING ~bmthief.sto~ ~override~
       LPF ADD_STORE_ITEM_EX
         INT_VAR
           stack = 2
         STR_VAR
-          item_name = ~potn60~
+          item_name = ~zdwine~
       END
     BUT_ONLY
   END
-
   ACTION_IF FILE_EXISTS_IN_GAME ~uddrow24.sto~ BEGIN  // Drow Vendor
     COPY_EXISTING ~uddrow24.sto~ ~override~
       LPF ADD_STORE_ITEM_EX
         INT_VAR
           stack = 8
         STR_VAR
-          item_name = ~potn60~
+          item_name = ~zdwine~
       END
     BUT_ONLY
   END
-
   ACTION_IF FILE_EXISTS_IN_GAME ~amsmug01.sto~ BEGIN  // Amekthran Smugglers
     COPY_EXISTING
       ~amsmug01.sto~ ~override~
@@ -143,11 +142,10 @@ ACTION_IF (GAME_IS ~tob bgt bg2ee eet~) BEGIN
         INT_VAR
           stack = 5
         STR_VAR
-          item_name = ~potn60~
+          item_name = ~zdwine~
       END
     BUT_ONLY
   END
-
   ACTION_IF FILE_EXISTS_IN_GAME ~25spell.sto~ BEGIN  // Arcana Archives
     COPY_EXISTING
       ~25spell.sto~ ~override~
@@ -156,7 +154,7 @@ ACTION_IF (GAME_IS ~tob bgt bg2ee eet~) BEGIN
         INT_VAR
           stack = 24
         STR_VAR
-          item_name = ~potn60~
+          item_name = ~zdwine~
       END
     BUT_ONLY
   END
@@ -167,7 +165,7 @@ ACTION_IF (GAME_IS ~tob bgt bg2ee eet~) BEGIN
         INT_VAR
           stack = 6
         STR_VAR
-          item_name = ~potn60~
+          item_name = ~zdwine~
       END
     BUT_ONLY
   END
@@ -178,7 +176,7 @@ ACTION_IF (GAME_IS ~tob bgt bg2ee eet~) BEGIN
         INT_VAR
           stack = 10
         STR_VAR
-          item_name = ~potn60~
+          item_name = ~zdwine~
       END
     BUT_ONLY
   END
@@ -189,7 +187,7 @@ ACTION_IF (GAME_IS ~tob bgt bg2ee eet~) BEGIN
         INT_VAR
           stack = 3
         STR_VAR
-          item_name = ~potn60~
+          item_name = ~zdwine~
       END
     BUT_ONLY
   END
@@ -201,11 +199,10 @@ ACTION_IF GAME_IS "iwdee" BEGIN
         INT_VAR
           stack = 20
         STR_VAR
-          item_name = ~potn60~
+          item_name = ~zdwine~
       END
     BUT_ONLY
   END
-
   ACTION_IF FILE_EXISTS_IN_GAME ~bandoth.sto~ BEGIN
     COPY_EXISTING
       ~bandoth.sto~ ~override~
@@ -214,18 +211,17 @@ ACTION_IF GAME_IS "iwdee" BEGIN
         INT_VAR
           stack = 14
         STR_VAR
-          item_name = ~potn60~
+          item_name = ~zdwine~
       END
     BUT_ONLY
   END
-
   ACTION_IF FILE_EXISTS_IN_GAME ~ldd_nym.sto~ BEGIN
     COPY_EXISTING ~ldd_nym.sto~ ~override~
       LPF ADD_STORE_ITEM_EX
         INT_VAR
           stack = 7
         STR_VAR
-          item_name = ~potn60~
+          item_name = ~zdwine~
       END
     BUT_ONLY
   END
